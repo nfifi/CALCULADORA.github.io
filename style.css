@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+body {
+  background: linear-gradient(to right, red, yellow, green);
+  color: #eee;
+}
+
+.grid_container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 90px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 90px);
+  /* minmax é definido com 120px mas e for necessário acrescentar  */
+}
+
+.grid_container > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  background-color: rgb(72, 72, 71);
+  color: #eee;
+  border-radius: 15px;
+  margin: 1px;
+}
+.grid_container > button:hover {
+  background: #3c3939;
+}
+
+.grid_container > .operator {
+  background: rgb(72, 72, 71);
+}
+
+.grid_container > .span-row-two {
+  grid-row: span 2;
+}
+
+.grid_container > .color-equal {
+  background-color: red;
+}
+
+.grid_container > .output {
+  grid-column: 1 / -1;
+  background: rgb(72, 72, 71);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  border-radius: 15px;
+  margin-bottom: 2px;
+}
+
+.grid_container > .output > .previous_operand {
+  color: #cfc6c6;
+  font-size: 1.5rem;
+}
+
+.grid_container > .output > .current_operand {
+  color: #eee;
+  font-size: 2.5rem;
+}
